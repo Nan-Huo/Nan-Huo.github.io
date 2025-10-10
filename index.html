@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nan Huo - PhD Student at HKU</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95em;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-links a:hover {
+            border-bottom: 1px solid #333;
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #f5f5f5;
+            color: #333;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border: 1px solid #e0e0e0;
+        }
+
+        .news-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            color: #888;
+            font-size: 0.9em;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .publication {
+            margin-bottom: 35px;
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #000;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .pub-authors strong {
+            font-weight: 600;
+        }
+
+        .pub-venue {
+            color: #2a7ae2;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+        }
+
+        .pub-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-bottom: 1px solid transparent;
+        }
+
+        .pub-links a:hover {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+
+        .pub-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9em;
+            background-color: #e3f2fd; /* 淡蓝色背景 */
+            padding: 4px 12px; /* 内边距让框更好看 */
+            border-radius: 6px; /* 圆角 */
+            border: 1px solid #bbdefb; /* 淡蓝色边框 */
+            transition: all 0.2s; /* 平滑过渡效果 */
+        }
+
+        .pub-links a:hover {
+            background-color: #bbdefb; /* 悬停时背景色稍微深一点 */
+            color: #000;
+            border-color: #90caf9;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exp-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #000;
+        }
+
+        .exp-date {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .exp-org {
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .company-logo {
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .logo-amazon {
+            height: 20px;
+        }
+
+        .logo-google {
+            height: 20px;
+        }
+
+        .logo-baai {
+            height: 28px;
+        }
+
+        .logo-microsoft {
+            height: 28px;
+        }
+
+        .logo-alibaba {
+            height: 22px;
+        }
+
+        .logo-tcl {
+            height: 16px;
+        }
+
+        .school-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .logo-yale {
+            width: 28px;
+            height: 28px;
+        }
+
+        .exp-desc {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .highlight {
+            background: #fffacd;
+            padding: 2px 4px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            header {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .news-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .news-date {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Nan Huo</h1>
+                <div class="subtitle">PhD Student @ The University of Hong Kong</div>
+                <div class="subtitle">Department of Computer Science</div>
+                <div class="contact-links">
+                    <a href="mailto:huonan@connect.hku.hk">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email
+                    </a>
+                    <a href="https://github.com/Noah-Flame" target="_blank">
+                        <img src="imgs/github-logo.svg" alt="" class="contact-icon">
+                        GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=ja6NViYAAAAJ" target="_blank">
+                        <img src="imgs/google-scholar-hd-logo.png" alt="" class="contact-icon">
+                        Google Scholar
+                    </a>
+                </div>
+            </div>
+            <img src="imgs/NanHuo.jpeg" alt="Nan Huo" class="profile-photo">
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                I am a PhD student in Computer Science at The University of Hong Kong, supervised by <a href="https://www.reynold.hku.hk/" target="_blank" style="color: #2a7ae2; text-decoration: none; border-bottom: 1px solid #2a7ae2;">Prof. Reynold Cheng</a>. I focus on building intelligent systems that bridge natural language and data. My research spans <strong>Text-to-SQL</strong>, <strong>Large Language Model Agents</strong>, and <strong>Interactive Data Analysis</strong>.
+            </p>
+            <p class="about-text">
+                I have worked with leading research labs including <strong>Google Cloud AI Research</strong>, <strong>Amazon</strong>, <strong>Microsoft Research Asia</strong>, and <strong>Alibaba DAMO Academy</strong>, developing benchmarks and frameworks that advance the field of AI-powered data interaction.
+            </p>
+            <div class="research-interests">
+                <span class="tag">Text-to-SQL</span>
+                <span class="tag">LLM Agents</span>
+                <span class="tag">Interactive Data Analysis</span>
+                <span class="tag">RAG</span>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-item">
+                <div class="news-date">Oct 2024</div>
+                <div>📝 We're thrilled to share that our
+                        <a href="https://huggingface.co/papers/2510.05318" target="_blank"
+                          ><strong>Bird-Interact paper</strong>
+                        </a
+                        > is now publicly available!
+                        The paper presents the full details, methodology, and evaluation of our
+                        <strong>BIRD-Interact</strong>, and includes
+                        several <strong>insightful findings</strong> about model behaviors and interaction patterns.</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">Sep 2025</div>
+                <div><span class="highlight">1 paper</span> accepted to <strong>NeurIPS 2025</strong></div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">Sep 2025</div>
+                <div>Started Applied Scientist Internship at <strong>Amazon</strong>, London</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">May 2025</div>
+                <div><span class="highlight">1 paper</span> accepted to <strong>ICML 2025</strong></div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">May 2025</div>
+                <div><span class="highlight">2 papers</span> accepted to <strong>ACL 2025</strong> Main Conference</div>
+            </div>
+            
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">PhD in Computer Science</div>
+                    <div class="exp-date">Sep 2021 - Apr 2026 (Expected)</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/hku-logo.png" alt="HKU" class="school-logo">
+                    The University of Hong Kong
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Master of Science in Computer Science</div>
+                    <div class="exp-date">Sep 2019 - Dec 2020</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/johns-hopkins-university-logo.png" alt="JHU" class="school-logo">
+                    Johns Hopkins University
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Student Intern</div>
+                    <div class="exp-date">Jan 2019 - Jun 2019</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/Yale-Logo.png" alt="Yale" class="school-logo logo-yale">
+                    Yale University
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Bachelor of Engineering</div>
+                    <div class="exp-date">Sep 2015 - Jun 2019</div>
+                </div>
+                <div class="exp-org">
+                    Nanjing University of Posts and Telecommunications (Bell Honors School)
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Applied Scientist Intern</div>
+                    <div class="exp-date">Sep 2025 - Present</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/amazon.png" alt="Amazon" class="company-logo logo-amazon">
+                    Amazon, London, UK
+                </div>
+                <div class="exp-desc">
+                    Working on <strong>RootCause-Agent</strong> for automating software ticket resolution via intelligent root cause analysis. Achieved 73% reduction in resolution time and 60% reduction in human resources.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Research Assistant</div>
+                    <div class="exp-date">Oct 2024 - Sep 2025</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/Google_logo.png" alt="Google" class="company-logo logo-google">
+                    Google Cloud AI Research, Remote
+                </div>
+                <div class="exp-desc">
+                    Led development of <strong>BIRD-INTERACT</strong> and <strong>LiveSQLBench</strong> benchmarks. Proposed novel interaction-time scaling laws and uncertainty-aware training mechanisms for LLM agents.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Research Assistant</div>
+                    <div class="exp-date">May 2024 - Dec 2024</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/baai.png" alt="BAAI" class="company-logo logo-baai">
+                    BAAI Research, Beijing, China
+                </div>
+                <div class="exp-desc">
+                    Developed <strong>MICRO-ACT</strong> framework for mitigating knowledge conflicts in RAG systems, achieving over 300% accuracy improvement.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Collaboration</div>
+                    <div class="exp-date">May 2023 - Mar 2024</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/microsoft.png" alt="Microsoft" class="company-logo logo-microsoft">
+                    Microsoft Research Asia, Beijing, China
+                </div>
+                <div class="exp-desc">
+                    Built <strong>Tapilot-Crossing</strong> benchmark with 1024 interactive dialogues for evaluating LLM agents in data analysis tasks.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Collaboration</div>
+                    <div class="exp-date">Oct 2022 - Mar 2023</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/alibaba.png" alt="Alibaba" class="company-logo logo-alibaba">
+                    Alibaba DAMO Research, Beijing, China
+                </div>
+                <div class="exp-desc">
+                    Contributed to <strong>BIRD-SQL</strong> benchmark (12,751 text-to-SQL tasks), featured by OpenAI for GPT-4o fine-tuning and adopted by 100+ companies and 50+ universities.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div class="exp-title">Student Researcher</div>
+                    <div class="exp-date">Sep 2021 - Sep 2023</div>
+                </div>
+                <div class="exp-org">
+                    <img src="imgs/tcl.png" alt="TCL" class="company-logo logo-tcl">
+                    TCL AI Research Center, Hong Kong
+                </div>
+                <div class="exp-desc">
+                    Led development of <strong>ZeroEA</strong>, a zero-training entity alignment framework. Designed graph structure translation module and motif-based neighborhood filter, improving performance by over 8% compared with supervised SOTA models.
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation via Lens of Dynamic Interactions</div>
+                    <div class="pub-authors"><strong>Nan Huo</strong>, Jinyang Li, Per Jacobsson, Yannis Papakonstantinou, Fatma Ozcan, Reynold Cheng, et al.</div>
+                    <div class="pub-venue">ICLR 2026 (under review)</div>
+                    <div class="pub-links">
+                        <a href="https://bird-interact.github.io/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">A Dynamic and Contamination-Free Benchmark for Evaluating LLMs on Real-World Text-to-SQL Tasks</div>
+                    <div class="pub-authors">Xiaohan Xu*, <strong>Nan Huo*</strong>, Per Jacobsson, Yannis Papakonstantinou, Fatma Ozcan, Reynold Cheng, et al.</div>
+                    <div class="pub-venue">Target ICML 2026; * Co-First Author</div>
+                    <div class="pub-links">
+                        <a href="https://livesqlbench.ai/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications</div>
+                    <div class="pub-authors">Jinyang Li*, Xiaolong Li*, Ge Qu*, Per Jacobsson, Bowen Qin, Binyuan Hui, Shuzheng Si, <strong>Nan Huo</strong>, et al.</div>
+                    <div class="pub-venue">Accepted by NeurIPS 2025</div>
+                    <div class="pub-links">
+                        <a href="https://bird-critic.github.io/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Micro-Act: Mitigate Knowledge Conflict in Question Answering via Actionable Self-Reasoning</div>
+                    <div class="pub-authors"><strong>Nan Huo</strong>, Jinyang Li, Bowen Qin, Ge Qu, Xiaolong Li, Xiaodong Li, Chenhao Ma, Reynold Cheng</div>
+                    <div class="pub-venue">Accepted by ACL 2025 Main Conference</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL</div>
+                    <div class="pub-authors">Ge Qu, Jinyang Li, Bowen Qin, Xiaolong Li, <strong>Nan Huo</strong>, Chenhao Ma, Reynold Cheng</div>
+                    <div class="pub-venue">Accepted by ACL 2025 Main Conference</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Tapilot-Crossing: Benchmarking and Evolving LLMs Towards Interactive Data Analysis Agents</div>
+                    <div class="pub-authors">Jinyang Li*, <strong>Nan Huo*</strong>, Yan Gao, Jiayi Shi, Yingxiu Zhao, Ge Qu, Bowen Qin, Yurong Wu, Xiaodong Li, Chenhao Ma, Jian-Guang Lou, Reynold Cheng</div>
+                    <div class="pub-venue">Accepted by ICML 2025; * Co-First Author</div>
+                    <div class="pub-links">
+                        <a href="https://tapilot-crossing.github.io/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">ZeroEA: A Zero-Training Entity Alignment Framework via Pre-Trained Language Model</div>
+                    <div class="pub-authors"><strong>Nan Huo</strong>, Reynold Cheng, Ben Kao, Wentao Ning, Nur Al Hasan Haldar, Xiaodong Li, Jinyang Li, Mohammad Matin Najafi, Tian Li, Ge Qu</div>
+                    <div class="pub-venue">Accepted by VLDB 2024</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation</div>
+                    <div class="pub-authors">Ge Qu, Jinyang Li, Bowen Li, Bowen Qin, <strong>Nan Huo</strong>, Chenhao Ma, Reynold Cheng</div>
+                    <div class="pub-venue">Accepted by ACL 2024 Findings</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Debiasing Recommendation with Personal Popularity</div>
+                    <div class="pub-authors">Wentao Ning, Reynold Cheng, Xiao Yan, Ben Kao, <strong>Nan Huo</strong>, Nur Al Hasan Haldar</div>
+                    <div class="pub-venue">Accepted by WWW 2024</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs</div>
+                    <div class="pub-authors">Jinyang Li, Binyuan Hui, Ge Qu, Jiaxi Yang, Binhua Li, Bowen Li, Bailin Wang, Bowen Qin, Rongyu Cao, Ruiying Geng, <strong>Nan Huo</strong>, Xuanhe Zhou, Chenhao Ma, Guoliang Li, Kevin C.C. Chang, Fei Huang et al.</div>
+                    <div class="pub-venue">Accepted by NeurIPS 2023 (Spotlight)</div>
+                    <div class="pub-links">
+                        <a href="https://bird-bench.github.io/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Graphix-T5: Mixing Pre-Trained Transformers with Graph-Aware Layers for Text-to-SQL Parsing</div>
+                    <div class="pub-authors">Jinyang Li, Binyuan Hui, Reynold Cheng, Bowen Qin, Chenhao Ma, <strong>Nan Huo</strong>, Fei Huang, Wenyu Du, Luo Si, Yongbin Li</div>
+                    <div class="pub-venue">Accepted by AAAI 2023</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Automatic Meta-Path Discovery for Effective Graph-Based Recommendation</div>
+                    <div class="pub-authors">Wentao Ning, Reynold Cheng, Jiajun Shen, Nur Al Hasan Haldar, Ben Kao, Xiao Yan, <strong>Nan Huo</strong>, Wai Kit Lam, Tian Li, Bo Tang</div>
+                    <div class="pub-venue">Accepted by CIKM 2022</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Muskits: an End-to-End Music Processing Toolkit for Singing Voice Synthesis</div>
+                    <div class="pub-authors">Jiatong Shi, Shuai Guo, Tao Qian, <strong>Nan Huo</strong>, Tomoki Hayashi, Yuning Wu, Frank Xu, Xuankai Chang, Huazhe Li, Peter Wu, Shinji Watanabe, Qin Jin</div>
+                    <div class="pub-venue">Accepted by INTERSPEECH 2022</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Sequence-to-sequence Singing Voice Synthesis with Perceptual Entropy Loss</div>
+                    <div class="pub-authors">Jiatong Shi, Shuai Guo, <strong>Nan Huo</strong>, Yuekai Zhang, Qin Jin</div>
+                    <div class="pub-venue">Accepted by ICASSP 2021</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-content">
+                    <div class="pub-title">Context-aware Goodness of Pronunciation for Computer-Assisted Pronunciation Training</div>
+                    <div class="pub-authors">Jiatong Shi, <strong>Nan Huo</strong>, Qin Jin</div>
+                    <div class="pub-venue">Accepted by INTERSPEECH 2020</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Nan Huo. Last updated: October 2025.</p>
+        </footer>
+    </div>
+</body>
+</html>
